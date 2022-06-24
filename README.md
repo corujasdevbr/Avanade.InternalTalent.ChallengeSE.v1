@@ -9,6 +9,7 @@ https://www.markdownguide.org/extended-syntax/
 1. Para a arquitetura
 
 https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures
+
 https://docs.microsoft.com/pt-br/azure/architecture/patterns/cqrs
 
 2. Para a controller

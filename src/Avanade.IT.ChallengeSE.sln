@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.IT.ChallengeSE.Appl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.IT.ChallengeSE.Api", "Avanade.IT.ChallengeSE.Api\Avanade.IT.ChallengeSE.Api.csproj", "{C597F767-4979-475A-90E2-9B0ED12F39A3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{72818B45-2FE7-4353-85B2-12F766EE2FBF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Domain", "1 - Domain", "{72818B45-2FE7-4353-85B2-12F766EE2FBF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infra", "2 - Infra", "{0AC8757F-1983-42BC-8282-C055F23581D8}"
 EndProject
@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.1 - Data", "2.1 - Data", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{66F18D02-FD78-49E2-A25F-73DBFDAB3C03}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 -Api", "1 -Api", "{7219F129-1A3C-4C56-9805-FEBBCC1F8E1C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Api", "4 - Api", "{7219F129-1A3C-4C56-9805-FEBBCC1F8E1C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{8A6B147A-3030-4232-A766-CE1930AFC7F4}"
 EndProject
@@ -33,7 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2.1 - Data", "5.2.1 - Dat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.2 - CrossCuting", "2.2 - CrossCuting", "{CC4F65F9-7EE8-454C-8578-503C4EBB9730}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.IT.ChallengeSE.CrossCuting", "Avanade.IT.ChallengeSE.CrossCuting\Avanade.IT.ChallengeSE.CrossCuting.csproj", "{167C536E-EE35-452E-9964-1C7CD5722F6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.IT.ChallengeSE.CrossCuting", "Avanade.IT.ChallengeSE.CrossCuting\Avanade.IT.ChallengeSE.CrossCuting.csproj", "{167C536E-EE35-452E-9964-1C7CD5722F6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
