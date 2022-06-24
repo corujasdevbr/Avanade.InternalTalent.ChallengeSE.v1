@@ -1,4 +1,5 @@
 ﻿using Avanade.IT.ChallengeSE.Domain.Entities;
+using Avanade.IT.ChallengeSE.Domain.ValueObjects.Enumerators;
 using MediatR;
 using System.Text.Json.Serialization;
 
@@ -11,7 +12,7 @@ namespace Avanade.IT.ChallengeSE.Application.Commands.PutQuestionCommand
         public String Title { get; set; }
         public String? Image { get; set; }
         public Int32 Points { get; set; }
-        public Int32 Weight { get; set; }
+        public Level Level { get; set; }
         public Boolean Active { get; set; }
 
         public static implicit operator Question(PutQuestionRequest questionDto) =>
@@ -19,7 +20,7 @@ namespace Avanade.IT.ChallengeSE.Application.Commands.PutQuestionCommand
                 questionDto.Id,
                 questionDto.Title,
                 questionDto.Points,
-                questionDto.Weight,
+                questionDto.Level,
                 questionDto.Active,
                 questionDto.Image);
 

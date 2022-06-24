@@ -10,9 +10,10 @@ namespace Avanade.IT.ChallengeSE.Api.Configurations
             if (services == null) throw new ArgumentNullException(nameof(services));
 
             services.AddDbContext<DbTcContext>(options => options
-                .UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+                .UseSqlServer(configuration.GetConnectionString("DefaultConnection"), options => options.EnableRetryOnFailure())
                 .EnableDetailedErrors(environment.IsDevelopment())
                 .EnableSensitiveDataLogging(environment.IsDevelopment())
+                
             );
         }
     }

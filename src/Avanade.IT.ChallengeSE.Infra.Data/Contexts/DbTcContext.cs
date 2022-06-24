@@ -23,7 +23,7 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Data Source=localhost;Initial Catalog=DB_QuesAns_Dev;User ID=sa;Password=<YourStrong@Passw0rd>");
+                optionsBuilder.UseSqlServer(@"Data Source=sqlserver;Initial Catalog=DB_QuesAns_Dev;User ID=sa;Password=<YourStrong@Passw0rd>");
             }
         }
 
