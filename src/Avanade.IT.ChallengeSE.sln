@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32519.111
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.IT.ChallengeSE.Domain", "Avanade.IT.ChallengeSE.Domain\Avanade.IT.ChallengeSE.Domain.csproj", "{FA3B0BE2-6868-497E-97A4-59A43D0C712D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.IT.ChallengeSE.Domain", "Avanade.IT.ChallengeSE.Domain\Avanade.IT.ChallengeSE.Domain.csproj", "{FA3B0BE2-6868-497E-97A4-59A43D0C712D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.IT.ChallengeSE.Infra.Data", "Avanade.IT.ChallengeSE.Infra.Data\Avanade.IT.ChallengeSE.Infra.Data.csproj", "{0709F44E-C144-4AE2-AF6D-4D9805434FCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.IT.ChallengeSE.Infra.Data", "Avanade.IT.ChallengeSE.Infra.Data\Avanade.IT.ChallengeSE.Infra.Data.csproj", "{0709F44E-C144-4AE2-AF6D-4D9805434FCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.IT.ChallengeSE.Application", "Avanade.IT.ChallengeSE.Application\Avanade.IT.ChallengeSE.Application.csproj", "{BFF27B70-D30A-43C5-8918-01D1996B7844}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.IT.ChallengeSE.Application", "Avanade.IT.ChallengeSE.Application\Avanade.IT.ChallengeSE.Application.csproj", "{BFF27B70-D30A-43C5-8918-01D1996B7844}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.IT.ChallengeSE.Api", "Avanade.IT.ChallengeSE.Api\Avanade.IT.ChallengeSE.Api.csproj", "{C597F767-4979-475A-90E2-9B0ED12F39A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.IT.ChallengeSE.Api", "Avanade.IT.ChallengeSE.Api\Avanade.IT.ChallengeSE.Api.csproj", "{C597F767-4979-475A-90E2-9B0ED12F39A3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Domain", "1 - Domain", "{72818B45-2FE7-4353-85B2-12F766EE2FBF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{72818B45-2FE7-4353-85B2-12F766EE2FBF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infra", "2 - Infra", "{0AC8757F-1983-42BC-8282-C055F23581D8}"
 EndProject
@@ -19,13 +19,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.1 - Data", "2.1 - Data", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{66F18D02-FD78-49E2-A25F-73DBFDAB3C03}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 -Api", "4 -Api", "{7219F129-1A3C-4C56-9805-FEBBCC1F8E1C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 -Api", "1 -Api", "{7219F129-1A3C-4C56-9805-FEBBCC1F8E1C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{8A6B147A-3030-4232-A766-CE1930AFC7F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.IT.ChallengeSE.Domain.Tests", "Avanade.IT.ChallengeSE.Domain.Tests\Avanade.IT.ChallengeSE.Domain.Tests.csproj", "{DCF254E7-7EC7-4F43-9753-009DE37C56E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.IT.ChallengeSE.Domain.Tests", "Avanade.IT.ChallengeSE.Domain.Tests\Avanade.IT.ChallengeSE.Domain.Tests.csproj", "{DCF254E7-7EC7-4F43-9753-009DE37C56E2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Domain", "5.1 - Domain", "{545CFB07-7CCF-4A7F-AD33-8C73B287EB5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - Infra", "5.2 - Infra", "{AA699FBA-5F40-4493-9AA4-EB2F46DAD35A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2.1 - Data", "5.2.1 - Data", "{8A74D693-1FA3-4736-8B32-3323B8EE67B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.2 - CrossCuting", "2.2 - CrossCuting", "{CC4F65F9-7EE8-454C-8578-503C4EBB9730}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.IT.ChallengeSE.CrossCuting", "Avanade.IT.ChallengeSE.CrossCuting\Avanade.IT.ChallengeSE.CrossCuting.csproj", "{167C536E-EE35-452E-9964-1C7CD5722F6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +61,10 @@ Global
 		{DCF254E7-7EC7-4F43-9753-009DE37C56E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCF254E7-7EC7-4F43-9753-009DE37C56E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCF254E7-7EC7-4F43-9753-009DE37C56E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{167C536E-EE35-452E-9964-1C7CD5722F6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{167C536E-EE35-452E-9964-1C7CD5722F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{167C536E-EE35-452E-9964-1C7CD5722F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{167C536E-EE35-452E-9964-1C7CD5722F6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +77,10 @@ Global
 		{6792DB66-B191-4490-8DE9-4B18E11A24B9} = {0AC8757F-1983-42BC-8282-C055F23581D8}
 		{DCF254E7-7EC7-4F43-9753-009DE37C56E2} = {545CFB07-7CCF-4A7F-AD33-8C73B287EB5C}
 		{545CFB07-7CCF-4A7F-AD33-8C73B287EB5C} = {8A6B147A-3030-4232-A766-CE1930AFC7F4}
+		{AA699FBA-5F40-4493-9AA4-EB2F46DAD35A} = {8A6B147A-3030-4232-A766-CE1930AFC7F4}
+		{8A74D693-1FA3-4736-8B32-3323B8EE67B4} = {AA699FBA-5F40-4493-9AA4-EB2F46DAD35A}
+		{CC4F65F9-7EE8-454C-8578-503C4EBB9730} = {0AC8757F-1983-42BC-8282-C055F23581D8}
+		{167C536E-EE35-452E-9964-1C7CD5722F6F} = {CC4F65F9-7EE8-454C-8578-503C4EBB9730}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E8ECB82D-C0D7-4B9E-9E76-51E8640577F0}

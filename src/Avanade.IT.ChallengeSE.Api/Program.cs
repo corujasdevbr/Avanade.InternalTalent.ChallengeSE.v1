@@ -1,11 +1,24 @@
+using Avanade.IT.ChallengeSE.Api.Configurations;
+using Avanade.IT.ChallengeSE.CrossCuting.DependencyInjection;
+using MediatR;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllersSetup();
 
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerSetup();
+builder.Services.AddDatabaseSetup(builder.Configuration, builder.Environment);
+builder.Services.AddDependencyInjectionSetup();
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
+// Adding MediatR for Domain Events and Notifications
+var assembly = AppDomain.CurrentDomain.Load("Avanade.IT.ChallengeSE.Application");
+builder.Services.AddMediatR(assembly);
 
 var app = builder.Build();
 
@@ -15,6 +28,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseSwaggerSetup();
 
 app.UseHttpsRedirection();
 
