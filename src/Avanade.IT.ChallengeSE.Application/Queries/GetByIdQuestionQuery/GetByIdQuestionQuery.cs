@@ -1,4 +1,5 @@
-﻿using Avanade.IT.ChallengeSE.Domain.Interfaces.Repositories;
+﻿using Avanade.IT.ChallengeSE.Application.Dtos;
+using Avanade.IT.ChallengeSE.Domain.Interfaces.Repositories;
 using MediatR;
 using System.Net;
 
@@ -38,7 +39,7 @@ namespace Avanade.IT.ChallengeSE.Application.Queries.GetByIdQuestionQuery
                     return await Task.FromResult(response);
                 }
 
-                response.Data = question;
+                response.Data = new QuestionDto(question.Id, question.Title, question.Points, question.Level, question.DateCreated, question.DateAltered, question.Active, question.Image);
                 response.StatusCode = (int)HttpStatusCode.OK;
                 response.Message = "Success";
 

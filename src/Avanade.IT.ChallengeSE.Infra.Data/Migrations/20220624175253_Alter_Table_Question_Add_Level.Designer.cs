@@ -4,6 +4,7 @@ using Avanade.IT.ChallengeSE.Infra.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Avanade.IT.ChallengeSE.Infra.Data.Migrations
 {
     [DbContext(typeof(DbTcContext))]
-    partial class DbTcContextModelSnapshot : ModelSnapshot
+    [Migration("20220624175253_Alter_Table_Question_Add_Level")]
+    partial class Alter_Table_Question_Add_Level
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
