@@ -9,6 +9,7 @@ namespace Avanade.IT.ChallengeSE.Domain.Entities
         public String? Image { get; private set; }
         public Int32 Points { get; private set; }
         public Level Level { get; private set; }
+        public ICollection<Answer> Answers { get; set; }
 
         public Question(String title, Int32 points, Level level, Boolean active = true, String? image = null)
         {

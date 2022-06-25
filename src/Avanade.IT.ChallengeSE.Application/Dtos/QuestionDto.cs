@@ -14,29 +14,8 @@ namespace Avanade.IT.ChallengeSE.Application.Dtos
         public Boolean Active { get;  set; }
         public DateTime DateCreated { get; set; }
         public DateTime DateAltered { get; set; }
+        public ICollection<AnswerDto> Answers { get; set; }
 
-        public QuestionDto(Guid id, String title, Int32 points, Level level,  DateTime dateCreated, DateTime dateAltered, Boolean active = true, String? image = null)
-        {
-            Id = id;
-            Title = title;
-            Image = image;
-            Points = points;
-            Level = level;
-            Active = active;
-            DateCreated = dateCreated;
-            DateAltered = dateAltered;
-            LevelDescription = Enum.GetName(typeof(Level), level);
-        }
-
-        public static implicit operator QuestionDto(Question question) =>
-           new(question.Id,
-               question.Title,
-               question.Points,
-               question.Level,
-               question.DateCreated,
-               question.DateAltered,
-               question.Active,
-               question.Image);
-
+        public QuestionDto() => LevelDescription = Enum.GetName(typeof(Level), Level);
     }
 }

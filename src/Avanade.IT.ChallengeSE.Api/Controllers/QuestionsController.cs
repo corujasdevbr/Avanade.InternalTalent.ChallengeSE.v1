@@ -53,14 +53,14 @@ namespace Avanade.IT.ChallengeSE.Api.Controllers
         }
 
         /// <summary>
-        /// Edita um profissional.
+        /// Update Question.
         /// </summary>
-        /// <param name="request">dados do profissional</param>
-        /// <returns>Profissional editado</returns>
+        /// <param name="request">Data Answer</param>
+        /// <returns>Answer updated</returns>
         /// <remarks>
         /// Sample request:
         ///
-        ///     PUT /Questions
+        ///     PUT /Answers
         ///     {
         ///         {
         ///             "title": "string",
@@ -129,18 +129,12 @@ namespace Avanade.IT.ChallengeSE.Api.Controllers
         /// <returns>Data Question</returns>
         /// <response code="200">Return object Question</response>
         /// <response code="400">Return Error</response>
-        [HttpGet("{id}")]
+        [HttpGet("byId")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetByIdQuestionResponse))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(GetByIdQuestionResponse))]
-        public async Task<ActionResult> GetById(
-            [FromRoute] Guid id,
+        public async Task<ActionResult> GetById([FromQuery] GetByIdQuestionRequest request,
             CancellationToken cancellationToken)
         {
-            var request = new GetByIdQuestionRequest
-            {
-                Id = id
-            };
-
             var response = await _mediator.Send(request, cancellationToken);
 
             return CustomResponse(response);

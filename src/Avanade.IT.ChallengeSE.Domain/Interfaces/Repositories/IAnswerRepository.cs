@@ -2,15 +2,14 @@
 
 namespace Avanade.IT.ChallengeSE.Domain.Interfaces.Repositories
 {
-    public interface IQuestionRepository
+    public interface IAnswerRepository
     {
-
         #region Read
         /// <summary>
         /// Get All Talent Community
         /// </summary>
         /// <returns>All Talent Community</returns>
-        IEnumerable<Question> GetAll(Func<Question, Boolean>? expr = null, String[]? includes = null);
+        IEnumerable<Answer> GetAll(Func<Answer, Boolean>? expr = null, String[]? includes = null);
 
 
         /// <summary>
@@ -18,7 +17,7 @@ namespace Avanade.IT.ChallengeSE.Domain.Interfaces.Repositories
         /// </summary>
         /// <param name="id">Id Talent Community</param>
         /// <returns>If found returns Talent Community</returns>
-        Question? GetById(Guid id, String[]? includes = null);
+        Answer? GetById(Guid id, String[]? includes = null);
         #endregion
 
 
@@ -26,17 +25,17 @@ namespace Avanade.IT.ChallengeSE.Domain.Interfaces.Repositories
         /// <summary>
         /// Add new Talent Community
         /// </summary>
-        /// <param name="Question">Data Talent Community</param>
+        /// <param name="Answer">Data Talent Community</param>
         /// <returns>Talent Community Created</returns>
-        Question Add(Question Question);
+        Answer Add(Answer Answer);
 
         /// <summary>
         /// Update Talent Community
         /// </summary>
-        /// <param name="Question">Data Talent Community</param>
+        /// <param name="Answer">Data Talent Community</param>
         /// <returns>Object Talent Comunity</returns>
-        Question Update(Question Question);
-        
+        Answer Update(Answer Answer);
+
         #endregion
     }
 }

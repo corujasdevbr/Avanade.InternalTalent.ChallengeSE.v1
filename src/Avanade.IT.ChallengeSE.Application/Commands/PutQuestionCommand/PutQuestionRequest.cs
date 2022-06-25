@@ -14,15 +14,5 @@ namespace Avanade.IT.ChallengeSE.Application.Commands.PutQuestionCommand
         public Int32 Points { get; set; }
         public Level Level { get; set; }
         public Boolean Active { get; set; }
-
-        public static implicit operator Question(PutQuestionRequest questionDto) =>
-            new(
-                questionDto.Id,
-                questionDto.Title,
-                questionDto.Points,
-                questionDto.Level,
-                questionDto.Active,
-                questionDto.Image);
-
     }
 }

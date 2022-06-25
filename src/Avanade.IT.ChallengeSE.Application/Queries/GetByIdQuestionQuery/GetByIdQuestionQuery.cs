@@ -1,4 +1,5 @@
-﻿using Avanade.IT.ChallengeSE.Application.Dtos;
+﻿using AutoMapper;
+using Avanade.IT.ChallengeSE.Application.Dtos;
 using Avanade.IT.ChallengeSE.Domain.Interfaces.Repositories;
 using MediatR;
 using System.Net;
@@ -9,14 +10,15 @@ namespace Avanade.IT.ChallengeSE.Application.Queries.GetByIdQuestionQuery
     {
         #region Properties
         private IQuestionRepository _questionRepository { get; }
+        private IMapper _mapper;
 
         #endregion
 
         #region Constructor
 
-        public GetByIdQuestionQuery(
-            IQuestionRepository questionRepository)
+        public GetByIdQuestionQuery(IQuestionRepository questionRepository, IMapper mapper)
         {
+            _mapper = mapper;
             _questionRepository = questionRepository;
         }
         #endregion
@@ -27,7 +29,7 @@ namespace Avanade.IT.ChallengeSE.Application.Queries.GetByIdQuestionQuery
 
             try
             {
-                var question = _questionRepository.GetById(request.Id);
+                var question = _questionRepository.GetById(request.Id, request.Includes);
 
                 if (question == null)
                 {
@@ -39,7 +41,7 @@ namespace Avanade.IT.ChallengeSE.Application.Queries.GetByIdQuestionQuery
                     return await Task.FromResult(response);
                 }
 
-                response.Data = new QuestionDto(question.Id, question.Title, question.Points, question.Level, question.DateCreated, question.DateAltered, question.Active, question.Image);
+                response.Data = _mapper.Map<QuestionDto>(question);
                 response.StatusCode = (int)HttpStatusCode.OK;
                 response.Message = "Success";
 
