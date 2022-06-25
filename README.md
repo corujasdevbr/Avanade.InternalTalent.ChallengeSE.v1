@@ -56,6 +56,8 @@ add-migration <name>
 
 6. Bibliotecas
 
-https://dotnetcoretutorials.com/2019/04/30/the-mediator-pattern-in-net-core-part-1-whats-a-mediator/
+[https://dotnetcoretutorials.com/2019/04/30/the-mediator-pattern-in-net-core-part-1-whats-a-mediator/](https://github.com/jbogard/MediatR)
 
 https://www.nuget.org/packages/Canducci.Pagination/
+
+https://automapper.org/
