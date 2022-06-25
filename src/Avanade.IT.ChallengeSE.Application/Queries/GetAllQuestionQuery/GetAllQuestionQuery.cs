@@ -1,4 +1,6 @@
-﻿using Avanade.IT.ChallengeSE.Domain.Interfaces.Repositories;
+﻿using AutoMapper;
+using Avanade.IT.ChallengeSE.Application.Dtos;
+using Avanade.IT.ChallengeSE.Domain.Interfaces.Repositories;
 using Canducci.Pagination;
 using MediatR;
 using System.Net;
@@ -9,12 +11,14 @@ namespace Avanade.IT.ChallengeSE.Application.Queries.GetAllQuestionQuery
     {
         #region Properties
         private IQuestionRepository _questionRepository { get; }
+        private IMapper _mapper;
 
         #endregion
 
         #region Contructor
-        public GetAllQuestionQuery(IQuestionRepository questionRepository)
+        public GetAllQuestionQuery(IQuestionRepository questionRepository,IMapper mapper)
         {
+            _mapper = mapper;
             _questionRepository = questionRepository;
         }
         #endregion
@@ -25,7 +29,7 @@ namespace Avanade.IT.ChallengeSE.Application.Queries.GetAllQuestionQuery
 
             try
             {
-                var questions = _questionRepository.GetAll();
+                var questions = _questionRepository.GetAll(null, request.Includes);
 
                 if (!string.IsNullOrEmpty(request.Title))
                     questions = questions.Where(x => x.Title.ToLower().Contains(request.Title.ToLower())).AsQueryable();
@@ -35,7 +39,7 @@ namespace Avanade.IT.ChallengeSE.Application.Queries.GetAllQuestionQuery
 
                 var questionsDistinct = questions.GroupBy(q => q.Title).Select(x => x.First()).ToList();
 
-                var questionsPaginacao = questionsDistinct.Distinct().ToPaginatedRest(request.Page, request.Quantity);
+                var questionsPaginacao = _mapper.Map<IEnumerable<QuestionDto>>(questionsDistinct.Distinct()).ToPaginatedRest(request.Page, request.Quantity);
 
                 response.Data = questionsPaginacao;
                 response.StatusCode = (int)HttpStatusCode.OK;

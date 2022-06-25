@@ -8,6 +8,7 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Contexts
     public class DbTcContext : DbContext
     {
         public DbSet<Question> Questions { get; set; }
+        public DbSet<Answer> Answers { get; set; }
 
         public DbTcContext()
         {
@@ -23,7 +24,7 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Data Source=sqlserver;Initial Catalog=DB_QuesAns_Dev;User ID=sa;Password=<YourStrong@Passw0rd>");
+                optionsBuilder.UseSqlServer(@"Data Source=127.0.0.1,11433;Initial Catalog=DB_QuesAns_Dev;User ID=sa;Password=<YourStrong@Passw0rd>");
             }
         }
 
@@ -31,6 +32,7 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Contexts
         {
             modelBuilder.Ignore<Notification>();
             modelBuilder.ApplyConfiguration(new QuestionMap());
+            modelBuilder.ApplyConfiguration(new AnswerMap());
 
             base.OnModelCreating(modelBuilder);
         }
@@ -64,3 +66,4 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Contexts
         }
     }
 }
+
