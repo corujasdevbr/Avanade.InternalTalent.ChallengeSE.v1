@@ -28,8 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Avanade.IT.ChallengeSE.Domain\Avanade.IT.ChallengeSE.Domain.csproj" />
-    <ProjectReference Include="..\src\Avanade.IT.ChallengeSE.Infra.Data\Avanade.IT.ChallengeSE.Infra.Data.csproj" />
+    <ProjectReference Include="..\Avanade.IT.ChallengeSE.Domain\Avanade.IT.ChallengeSE.Domain.csproj" />
+    <ProjectReference Include="..\Avanade.IT.ChallengeSE.Infra.Data\Avanade.IT.ChallengeSE.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>
