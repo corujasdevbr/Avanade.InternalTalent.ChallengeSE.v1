@@ -7,5 +7,6 @@ namespace Avanade.IT.ChallengeSE.Application.Queries.GetByIdQuestionQuery
     {
         [Required(ErrorMessage = "Please enter a value Id")]
         public Guid Id { get; set; }
+        public String[]? Includes { get; set; }
     }
 }

@@ -8,6 +8,7 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Contexts
     public class DbTcContext : DbContext
     {
         public DbSet<Question> Questions { get; set; }
+        public DbSet<Answer> Answers { get; set; }
 
         public DbTcContext()
         {
@@ -31,6 +32,7 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Contexts
         {
             modelBuilder.Ignore<Notification>();
             modelBuilder.ApplyConfiguration(new QuestionMap());
+            modelBuilder.ApplyConfiguration(new AnswerMap());
 
             base.OnModelCreating(modelBuilder);
         }
@@ -64,3 +66,4 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Contexts
         }
     }
 }
+
