@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Avanade.IT.ChallengeSE.Infra.Data.Repositories
 {
-    public class QuestionRepository : IQuestionRepository
+    public class QuestionRepository : IQuestionRepository, IDisposable
     {
 
         private readonly DbTcContext _dbTcContext;
@@ -22,7 +22,7 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Repositories
         #region Read
         public IEnumerable<Question> GetAll(Func<Question, bool>? expr = null, string[]? includes = null)
         {
-            _logger.LogInformation("Get All Talent Community");
+            _logger.LogInformation("Get All Question");
             if (expr != null) _logger.LogInformation($"Exp {expr}");
             if (includes != null) _logger.LogInformation($"Includes {includes}");
 
@@ -42,7 +42,7 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Repositories
 
         public Question? GetById(Guid id, string[]? includes = null)
         {
-            _logger.LogInformation($"Get Talent Community Id - {id}");
+            _logger.LogInformation($"Get Question Id - {id}");
             if (includes != null) _logger.LogInformation($"Includes {includes}");
 
             var query = _dbTcContext.Questions.AsNoTracking().AsQueryable();
@@ -53,32 +53,42 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Repositories
             {
                 query = query.Include(include);
             }
-            return query.FirstOrDefault(x => x.Id == id);
+
+            var question = query.FirstOrDefault(x => x.Id == id);
+            _dbTcContext.Entry(question).State = EntityState.Detached;
+
+            return question;
         }
         #endregion
 
 
         #region Write
-        public Question Add(Question Question)
+        public Question Add(Question question)
         {
-            _logger.LogInformation("Add Talent Community");
-            _dbTcContext.Questions.Add(Question);
+            _logger.LogInformation("Add Question");
+            _dbTcContext.Questions.Add(question);
             _dbTcContext.SaveChanges();
-            _logger.LogInformation("Talent Community", Question);
+            _logger.LogInformation("Question", question);
 
-            return Question;
+            return question;
         }
 
-        public Question Update(Question Question)
+        public Question Update(Question question)
         {
-            _logger.LogInformation("Update Talent Community");
-            _dbTcContext.Questions.Add(Question).State = EntityState.Modified;
+            _dbTcContext.ChangeTracker.Clear();
+            _logger.LogInformation("Update Question");
+            _dbTcContext.Questions.Add(question).State = EntityState.Modified;
             _dbTcContext.SaveChanges();
-            _logger.LogInformation("Talent Community", Question);
+            _logger.LogInformation("Question", question);
 
-            return Question;
+            return question;
         }
-        
+
+        public void Dispose()
+        {
+            _dbTcContext.Dispose();          
+        }
+
         #endregion
     }
 }
