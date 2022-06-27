@@ -8,5 +8,6 @@ namespace Avanade.IT.ChallengeSE.Application.Queries.GetAllQuestionQuery
         public int Quantity { get; set; } = 10;
         public string? Title { get; set; }
         public Boolean? Status { get; set; }
+        public String[]? Includes { get; set; }
     }
 }

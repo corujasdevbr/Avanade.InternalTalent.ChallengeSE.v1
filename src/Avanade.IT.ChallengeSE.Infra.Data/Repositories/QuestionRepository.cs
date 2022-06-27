@@ -1,4 +1,4 @@
-﻿using Avanade.IT.ChallengeSE.Domain.Entities;
+using Avanade.IT.ChallengeSE.Domain.Entities;
 using Avanade.IT.ChallengeSE.Domain.Interfaces.Repositories;
 using Avanade.IT.ChallengeSE.Infra.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +20,7 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Repositories
 
 
         #region Read
-        public IEnumerable<Question> GetAll(Func<Question, bool>? expr = null, string[]? includes = null)
+        public IEnumerable<Question> GetAll(Func<Question, Boolean>? expr = null, String[]? includes = null)
         {
             _logger.LogInformation("Get All Question");
             if (expr != null) _logger.LogInformation($"Exp {expr}");
@@ -34,13 +34,13 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Repositories
 
             foreach (var include in includes)
             {
-                query = query.Include(include);
+                query = query.Include(include).AsNoTracking();
             }
 
             return (expr == null) ? query.AsQueryable() : query.Where(expr).AsQueryable();
         }
 
-        public Question? GetById(Guid id, string[]? includes = null)
+        public Question? GetById(Guid id, String[]? includes = null)
         {
             _logger.LogInformation($"Get Question Id - {id}");
             if (includes != null) _logger.LogInformation($"Includes {includes}");
@@ -51,7 +51,7 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Repositories
 
             foreach (var include in includes)
             {
-                query = query.Include(include);
+                query = query.Include(include).AsNoTracking();
             }
 
             var question = query.FirstOrDefault(x => x.Id == id);
@@ -70,6 +70,7 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Repositories
             _dbTcContext.SaveChanges();
             _logger.LogInformation("Question", question);
 
+
             return question;
         }
 
@@ -86,7 +87,7 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Repositories
 
         public void Dispose()
         {
-            _dbTcContext.Dispose();          
+            _dbTcContext.Dispose();   
         }
 
         #endregion

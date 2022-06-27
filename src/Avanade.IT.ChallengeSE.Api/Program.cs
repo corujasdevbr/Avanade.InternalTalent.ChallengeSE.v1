@@ -1,4 +1,5 @@
 using Avanade.IT.ChallengeSE.Api.Configurations;
+using Avanade.IT.ChallengeSE.Application.Mappers;
 using Avanade.IT.ChallengeSE.CrossCuting.DependencyInjection;
 using MediatR;
 
@@ -12,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerSetup();
 builder.Services.AddDatabaseSetup(builder.Configuration, builder.Environment);
 builder.Services.AddDependencyInjectionSetup();
+builder.Services.AddAutoMapper(typeof(AutoMapping));
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();

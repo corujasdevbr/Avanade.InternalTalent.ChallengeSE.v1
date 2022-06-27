@@ -16,6 +16,7 @@ namespace Avanade.IT.ChallengeSE.CrossCuting.DependencyInjection
             services.AddScoped<DbTcContext>();
 
             services.AddTransient<IQuestionRepository, QuestionRepository>();
+            services.AddTransient<IAnswerRepository, AnswerRepository>();
         }
     }
 }
