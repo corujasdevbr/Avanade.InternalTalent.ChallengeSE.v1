@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avanade.IT.ChallengeSE.Cros
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8BA917B4-0800-46E9-82BC-A72B81CC8EB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.IT.ChallengeSE.Tests.Infra.Data", "..\Avanade.IT.ChallengeSE.Tests.Infra.Data\Avanade.IT.ChallengeSE.Tests.Infra.Data.csproj", "{3497D695-A243-40E9-B7F6-A9EEB8935784}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{8BA917B4-0800-46E9-82BC-A72B81CC8EB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BA917B4-0800-46E9-82BC-A72B81CC8EB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BA917B4-0800-46E9-82BC-A72B81CC8EB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3497D695-A243-40E9-B7F6-A9EEB8935784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3497D695-A243-40E9-B7F6-A9EEB8935784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3497D695-A243-40E9-B7F6-A9EEB8935784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3497D695-A243-40E9-B7F6-A9EEB8935784}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +93,7 @@ Global
 		{8A74D693-1FA3-4736-8B32-3323B8EE67B4} = {AA699FBA-5F40-4493-9AA4-EB2F46DAD35A}
 		{CC4F65F9-7EE8-454C-8578-503C4EBB9730} = {0AC8757F-1983-42BC-8282-C055F23581D8}
 		{167C536E-EE35-452E-9964-1C7CD5722F6F} = {CC4F65F9-7EE8-454C-8578-503C4EBB9730}
+		{3497D695-A243-40E9-B7F6-A9EEB8935784} = {8A74D693-1FA3-4736-8B32-3323B8EE67B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E8ECB82D-C0D7-4B9E-9E76-51E8640577F0}
