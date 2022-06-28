@@ -10,6 +10,11 @@ namespace Avanade.IT.ChallengeSE.Domain.Entities
         public Guid IdQuestion { get; private set; }
         public Question Question { get; private set; }
 
+        public Answer()
+        {
+
+        }
+
         public Answer(String title, Guid idQuestion, Boolean correct, Boolean active = true, String? image = null)
         {
             AddNotifications(new Contract<Answer>()
