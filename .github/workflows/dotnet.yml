@@ -20,6 +20,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build Avanade.IT.ChallengeSE.sln --no-restore
+      run: dotnet build src/Avanade.IT.ChallengeSE.sln --no-restore
     - name: Test
-      run: dotnet test Avanade.IT.ChallengeSE.Tests.Infra.Data --no-build --verbosity normal
+      run: dotnet test src/Avanade.IT.ChallengeSE.Tests.Infra.Data --no-build --verbosity normal
