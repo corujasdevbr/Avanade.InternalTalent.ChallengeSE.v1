@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Avanade.IT.ChallengeSE.Tests.Infra.Data.Context
 {
-    public class DbTcContextInMemoryTest : DbContext
+    public class DbTcContextInMemoryTest : IDisposable
     {
         private DbContextOptions<DbTcContext> dbContextOptions;
 
@@ -18,7 +18,7 @@ namespace Avanade.IT.ChallengeSE.Tests.Infra.Data.Context
         {
             var dbName = "Data Source=:memory:";
             dbContextOptions = new DbContextOptionsBuilder<DbTcContext>()
-                .UseSqlite(@"Data Source=questions.db")
+                .UseSqlite(@"Data Source=db_test.db")
                 .EnableSensitiveDataLogging()
                 .Options;
 
@@ -30,10 +30,11 @@ namespace Avanade.IT.ChallengeSE.Tests.Infra.Data.Context
             CarregaDados();
         }
 
-        private void CarregaDados()
+        private async void CarregaDados()
         {
-            _context.Database.EnsureDeleted();
-            _context.Database.EnsureCreated();
+            await _context.Database.EnsureCreatedAsync();
+
+            if (_context.Questions.Any()) return;
 
             var testQuestion = _fakerQuestion
                                         .StrictMode(false)
@@ -47,6 +48,11 @@ namespace Avanade.IT.ChallengeSE.Tests.Infra.Data.Context
 
 
             _context.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            _context.Dispose();
         }
     }
 }

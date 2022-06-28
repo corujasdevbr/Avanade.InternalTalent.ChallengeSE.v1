@@ -9,6 +9,7 @@ using Moq;
 
 namespace Avanade.IT.ChallengeSE.Tests.Infra.Data.Repositories
 {
+    [CollectionDefinition("Context collection")]
     public class QuestionRepositoryTest : IClassFixture<DbTcContextInMemoryTest>
     {
         private readonly DbTcContextInMemoryTest _fixture;
@@ -29,7 +30,7 @@ namespace Avanade.IT.ChallengeSE.Tests.Infra.Data.Repositories
         {
             var result = _questionRepository.GetAll();
 
-            Assert.Equal(2, result.ToList().Count);
+            Assert.True(result.ToList().Count > 0);
         }
 
         [Fact]
@@ -75,11 +76,13 @@ namespace Avanade.IT.ChallengeSE.Tests.Infra.Data.Repositories
         {
             var questionEdit = _questionRepository.GetAll().FirstOrDefault();
 
+            bool active = questionEdit.Active;
+
             questionEdit.ChangeStatus();
 
             var result = _questionRepository.Update(questionEdit);
 
-            Assert.True(questionEdit.Active);
+            Assert.True(active != questionEdit.Active);
         }
 
     }

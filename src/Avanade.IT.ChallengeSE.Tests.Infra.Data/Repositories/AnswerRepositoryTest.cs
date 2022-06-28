@@ -8,6 +8,7 @@ using Moq;
 
 namespace Avanade.IT.ChallengeSE.Tests.Infra.Data.Repositories
 {
+    [CollectionDefinition("Context collection")]
     public class AnswerRepositoryTest : IClassFixture<DbTcContextInMemoryTest>
     {
         private readonly DbTcContextInMemoryTest _fixture;
