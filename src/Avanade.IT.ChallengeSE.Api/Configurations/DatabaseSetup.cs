@@ -16,5 +16,16 @@ namespace Avanade.IT.ChallengeSE.Api.Configurations
                 
             );
         }
+
+        
+        public static void UseDatabaseMigrate(this IApplicationBuilder app)
+        {
+            if (app == null) throw new ArgumentNullException(nameof(app));
+
+            using (var serviceScope = app.ApplicationServices.CreateScope())
+            {
+                serviceScope.ServiceProvider.GetService<DbTcContext>().Database.Migrate();
+            }
+        }
     }
 }

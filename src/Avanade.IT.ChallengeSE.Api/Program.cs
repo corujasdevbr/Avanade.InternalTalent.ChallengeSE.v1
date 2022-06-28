@@ -2,11 +2,13 @@ using Avanade.IT.ChallengeSE.Api.Configurations;
 using Avanade.IT.ChallengeSE.Application.Mappers;
 using Avanade.IT.ChallengeSE.CrossCuting.DependencyInjection;
 using MediatR;
+using static Avanade.IT.ChallengeSE.Api.Configurations.DatabaseSetup;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersSetup();
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -30,6 +32,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseDatabaseMigrate();
 
 app.UseSwaggerSetup();
 

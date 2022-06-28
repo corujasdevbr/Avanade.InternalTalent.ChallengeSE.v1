@@ -11,6 +11,11 @@ namespace Avanade.IT.ChallengeSE.Domain.Entities
         public Level Level { get; private set; }
         public ICollection<Answer> Answers { get; set; }
 
+        public Question()
+        {
+
+        }
+
         public Question(String title, Int32 points, Level level, Boolean active = true, String? image = null)
         {
             AddNotifications(new Contract<Question>()

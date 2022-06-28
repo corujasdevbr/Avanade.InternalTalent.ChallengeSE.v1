@@ -26,7 +26,7 @@ namespace Avanade.IT.ChallengeSE.Application.Commands.PostAnswerCommand
             try
             {
                 #region business rules
-                var question = _questionRepository.GetAll(x => x.Id == request.IdQuestion);
+                var question = _questionRepository.GetById(request.IdQuestion);
 
                 if (question == null)
                 {
