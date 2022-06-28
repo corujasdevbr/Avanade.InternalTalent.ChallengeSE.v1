@@ -12,7 +12,7 @@ namespace Avanade.IT.ChallengeSE.Infra.Data.Repositories
         private readonly DbTcContext _dbTcContext;
         private readonly ILogger _logger;
 
-        public AnswerRepository(DbTcContext dbTcContext, ILogger<QuestionRepository> logger)
+        public AnswerRepository(DbTcContext dbTcContext, ILogger<AnswerRepository> logger)
         {
             _dbTcContext = dbTcContext;
             _logger = logger;
